@@ -1,0 +1,30 @@
+{
+    "python.terminal.launchArgs": [
+        "-m",
+       "IPython",
+       "--no-autoindent",
+       "-i",
+   ],
+   "multiCommand.commands": [
+    {
+        "command": "multiCommand.executeIPython",
+        "interval": 40,
+        "sequence": [
+            "python.execSelectionInTerminal",
+            "workbench.action.terminal.focus",
+            "workbench.action.terminal.scrollToBottom",
+            {"command": "workbench.action.terminal.sendSequence",
+            "args": { "text": "\u000D" }},
+            "workbench.action.focusActiveEditorGroup"
+        ]
+    },
+]
+}
+
+
+// // keybindings.json
+// {
+//     "key": "shift+enter",
+//     "command": "multiCommand.executeIPython",
+//     "when": "editorTextFocus && !findInputFocussed && !python.datascience.ownsSelection && !replaceInputFocussed && editorLangId == 'python'" 
+//   }
